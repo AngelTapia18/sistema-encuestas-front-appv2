@@ -1,0 +1,41 @@
+<div class="content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <a href="index.html" class="mb-3 d-inline-flex align-items-center text-muted text-decoration-none">
+        <i class="bi bi-arrow-left me-1"></i> Volver a Encuestas
+      </a>
+      <h2>Listado de preguntas</h2>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregarPregunta"><i class="bi bi-plus-circle-fill"></i> Añadir Pregunta</button>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped align-middle" id="tablaPreguntas">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Nombre de la Pregunta</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>¿Qué te parece nuestro servicio?</td>
+            <td>
+              <button class="btn btn-sm btn-warning me-2">Editar</button>
+              <button class="btn btn-sm btn-danger me-2">Eliminar</button>
+              <button class="btn btn-sm btn-success me-2" onclick="irAOpciones(1)">Añadir Opciones</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>¿Recomendarías nuestro producto?</td>
+            <td>
+              <button class="btn btn-sm btn-warning me-2">Editar</button>
+              <button class="btn btn-sm btn-danger me-2">Eliminar</button>
+              <button class="btn btn-sm btn-success me-2" onclick="irAOpciones(1)">Añadir Opciones</button>
+            </td>
+          </tr>
+          <!-- Puedes añadir más preguntas aquí -->
+        </tbody>
+      </table>
+    </div>

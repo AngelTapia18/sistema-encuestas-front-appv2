@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    overflow-x: hidden;
+}
+
+/* Sidebar general */
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  background-color: #343a40;
+  color: white;
+  padding-top: 60px;
+  z-index: 1030;
+}
+
+/* Para pantallas grandes: aplica margen para dar espacio al sidebar */
+@media (min-width: 768px) {
+  .content {
+    margin-left: 240px;
+    padding: 30px;
+  }
+}
+
+/* Para móviles: elimina margen lateral */
+@media (max-width: 767.98px) {
+  .content {
+    margin: 1rem; /* o 20px, o como prefieras */
+  }
+}
+
+.sidebar a {
+    color: white;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    font-weight: bold;
+    color: white;
+}
+
+.sidebar a:hover {
+    background-color: #495057;
+}
+
+.sidebar span.text-muted {
+    font-style: italic;
+    cursor: not-allowed;
+}
+
+.sidebar .submenu-desactivado {
+    color: rgba(255, 255, 255, 0.5); /* blanco con opacidad del 50% */
+    font-style: italic;
+    cursor: not-allowed;
+}
+
+.submenu-desactivado.active {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    cursor: default;
+}
+
+#submenuEncuestas span {
+    margin-bottom: 0.5rem;
+    display: block;
+}

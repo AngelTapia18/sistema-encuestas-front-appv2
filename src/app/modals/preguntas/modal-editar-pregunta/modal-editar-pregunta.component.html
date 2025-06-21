@@ -1,0 +1,24 @@
+<!-- MODAL PARA EDITAR PREGUNTA -->
+    <div class="modal fade" id="modalEditarPregunta" tabindex="-1" aria-labelledby="modalEditarPreguntaLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form id="formEditarPregunta">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalEditarPreguntaLabel">Editar Pregunta</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              <input type="hidden" id="editIndexPregunta" />
+              <div class="mb-3">
+                <label for="nombreEditarPregunta" class="form-label">¿Cual es la pregunta?</label>
+                <input type="text" class="form-control" id="nombreEditarPregunta" required />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,49 @@
+<!-- Botón de menú para móviles -->
+  <nav class="navbar bg-dark d-md-none">
+    <div class="container-fluid">
+      <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas">
+        <i class="bi bi-list"></i> Menú
+      </button>
+    </div>
+  </nav>
+
+  <!-- Sidebar Offcanvas (para móviles y tablets) -->
+  <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="sidebarOffcanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menú</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <a href="/" class="text-white d-block mb-2">
+        <i class="bi bi-house-door-fill"></i> Inicio
+      </a>
+      <a href="/" class="text-white d-block mb-2">
+        <i class="bi bi-journal-text"></i> Encuestas
+      </a>
+      <div class="ps-3">
+        <span class="text-white-50 d-block mb-2"><i class="bi bi-patch-question-fill me-2"></i> Preguntas</span>
+        <div class="ps-3">
+          <span class="text-white-50 d-block"><i class="bi bi-ui-checks-grid me-2"></i> Opciones</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar para pantallas grandes -->
+  <div class="sidebar d-none d-md-block">
+    <h4 class="text-center">Menú</h4>
+    <a class="text-white text-decoration-none" routerLink="listado-encuestas"><i class="bi bi-house-door-fill"></i> Inicio</a>
+    <div class="d-flex justify-content-between yolo">
+      <a class="text-white text-decoration-none" routerLink="listado-encuestas"><i class="bi bi-journal-text"></i> Encuestas</a>
+      <button class="btn btn-sm toggle-icon text-white" data-bs-toggle="collapse" data-bs-target="#submenuEncuestas" aria-expanded="false" aria-controls="submenuEncuestas" style="background: none; border: none;">
+        <span id="flechaEncuestas"><i class="bi bi-caret-down-fill"></i></span>
+      </button>
+    </div>
+
+    <div class="collapse ps-4" id="submenuEncuestas">
+      <span class="submenu-desactivado d-block mb-2"><i class="bi bi-patch-question-fill"></i> Preguntas</span>
+      <div class="ps-3">
+        <span class="submenu-desactivado d-block"><i class="bi bi-ui-checks-grid"></i> Opciones</span>
+      </div>
+    </div>
+  </div>
