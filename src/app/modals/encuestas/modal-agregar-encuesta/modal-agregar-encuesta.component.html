@@ -1,20 +1,17 @@
 <!-- MODAL PARA AÑADIR ENCUESTA -->
-  <div class="modal fade" id="modalAgregarEncuesta" tabindex="-1" aria-labelledby="modalAgregarEncuestaLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalAgregarEncuestaLabel">Agregar Nueva Encuesta</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <form id="formAgregarEncuesta">
-            <div class="mb-3">
-              <label for="nombreEncuesta" class="form-label">Nombre de la Encuesta</label>
-              <input type="text" class="form-control" id="nombreEncuesta" required>
-            </div>
-            <button type="submit" class="btn btn-success">Guardar</button>
-          </form>
-        </div>
-      </div>
+  <div class="modal-header">
+    <h5 class="modal-title" id="modalAgregarEncuestaLabel">Agregar Nueva Encuesta</h5>
+    <button type="button" class="btn-close" aria-label="Cerrar" (click)="activeModal.dismiss('Cancelar')"></button>
+  </div>
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="nombreEncuesta" class="form-label">Nombre de la Encuesta</label>
+      <input type="text" class="form-control" id="nombreEncuesta"
+            [(ngModel)]="nombreEncuesta" name="nombreEncuesta"
+            placeholder="Ingrese el nombre de la encuesta" required>
     </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss('Cancelar')">Cancelar</button>
+    <button type="button" class="btn btn-primary" (click)="guardarEncuesta()" [disabled]="!nombreEncuesta.trim()">Guardar</button>
   </div>

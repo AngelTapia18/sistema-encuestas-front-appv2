@@ -1,20 +1,17 @@
-<!-- Modal Añadir -->
-  <div class="modal fade" id="modalAgregarOpcion" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form id="formAgregarOpcion">
-          <div class="modal-header">
-            <h5 class="modal-title">Agregar Opción</h5>
-            <button class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-            <label for="nombreOpcion" class="form-label">Cual es la opcion</label>
-            <input type="text" id="nombreOpcion" class="form-control" placeholder="Escribe la opción" required />
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-success" type="submit">Guardar</button>
-          </div>
-        </form>
-      </div>
-    </div>
+<!-- MODAL PARA AÑADIR PREGUNTA -->
+<div class="modal-header">
+  <h5 class="modal-title">Agregar Opción</h5>
+  <button type="button" class="btn-close" aria-label="Cerrar" (click)="activeModal.dismiss('Cancelar')"></button>
+</div>
+<div class="modal-body">
+  <div class="mb-3">
+    <label for="nombreOpcion" class="form-label">Cual es la opcion</label>
+    <input type="text" class="form-control" id="nombreOpcion"
+          [(ngModel)]="nombreOpcion" name="nombreOpcion"
+          placeholder="Ejem. ¿Como se llama?" required>
   </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss('Cancelar')">Cancelar</button>
+  <button type="button" class="btn btn-primary" (click)="guardarOpcion()" [disabled]="!nombreOpcion.trim()">Guardar</button>
+</div>
