@@ -7,8 +7,8 @@ import { Encuesta } from '../models/encuesta';
   providedIn: 'root'
 })
 export class EncuestaService {
-  private urlBase = "http://localhost:8080/sistema-encuestas-app/api/v1/encuestas";
-  private urlAcciones = "http://localhost:8080/sistema-encuestas-app/api/v1/encuesta";
+  private urlBase = "https://sistemaencuestasapp.uc.r.appspot.com/sistema-encuestas-app/api/v1/encuestas";
+  private urlAcciones = "https://sistemaencuestasapp.uc.r.appspot.com/sistema-encuestas-app/api/v1/encuesta";
   private clientHttp = inject(HttpClient);
 
   obtenerListaEncuestas(): Observable<Encuesta[]>{

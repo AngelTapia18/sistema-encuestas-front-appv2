@@ -7,9 +7,9 @@ import { Pregunta } from '../models/pregunta';
   providedIn: 'root'
 })
 export class PreguntaService {
-  private urlListar = "http://localhost:8080/sistema-encuestas-app/api/v1/preguntas/encuesta";
-  private urlAgregar = "http://localhost:8080/sistema-encuestas-app/api/v1/pregunta/encuesta";
-  private urlAcciones = "http://localhost:8080/sistema-encuestas-app/api/v1/pregunta";
+  private urlListar = "https://sistemaencuestasapp.uc.r.appspot.com/sistema-encuestas-app/api/v1/preguntas/encuesta";
+  private urlAgregar = "https://sistemaencuestasapp.uc.r.appspot.com/sistema-encuestas-app/api/v1/pregunta/encuesta";
+  private urlAcciones = "https://sistemaencuestasapp.uc.r.appspot.com/sistema-encuestas-app/api/v1/pregunta";
   private clientHttp = inject(HttpClient);
 
   obtenerListaPreguntasPorEncuesta(id: number): Observable<Pregunta[]>{

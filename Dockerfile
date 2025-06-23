@@ -15,15 +15,35 @@
 # CMD [ "nginx", "-g","daemon off;"]
 
 # Etapa de construcción
-FROM node:18-alpine as build
+# FROM node:18-alpine as build
+# WORKDIR /app
+# COPY package.json package-lock.json ./
+# RUN npm ci
+# COPY . .
+# RUN npm run build -- --configuration production
+
+# # Etapa de producción
+# FROM nginx:alpine
+# COPY --from=build /app/dist/sistema-encuestas-app /usr/share/nginx/html
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
+# RUN chown -R nginx:nginx /usr/share/nginx/html
+
+
+# Etapa 1: Construir la app Angular
+FROM node:22-alpine3.18 AS builder
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY package.json .
+RUN npm install
 COPY . .
 RUN npm run build -- --configuration production
 
-# Etapa de producción
+# Etapa 2: Servir con NGINX (ajustado para Cloud Run)
 FROM nginx:alpine
-COPY --from=build /app/dist/sistema-encuestas-app /usr/share/nginx/html
+COPY --from=builder /app/dist/sistema-encuestas-app/browser /usr/share/nginx/html
+
+# Configuración crítica para Cloud Run:
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-RUN chown -R nginx:nginx /usr/share/nginx/html
+ENV PORT=8080
+EXPOSE 8080
+CMD sed -i "s/listen 80/listen $PORT/g" /etc/nginx/conf.d/default.conf && \
+    nginx -g 'daemon off;'

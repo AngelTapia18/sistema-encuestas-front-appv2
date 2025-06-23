@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OpcionService {
 
-  private urlListar = "http://localhost:8080/sistema-encuestas-app/api/v1/opcion/pregunta";
-  private urlAcciones = "http://localhost:8080/sistema-encuestas-app/api/v1/opcion";
+  private urlListar = "https://sistemaencuestasapp.uc.r.appspot.com/sistema-encuestas-app/api/v1/opcion/pregunta";
+  private urlAcciones = "https://sistemaencuestasapp.uc.r.appspot.com/sistema-encuestas-app/api/v1/opcion";
   private clientHttp = inject(HttpClient);
 
   obtenerListaOpcionesPorPregunta(id: number): Observable<Opcion[]>{
