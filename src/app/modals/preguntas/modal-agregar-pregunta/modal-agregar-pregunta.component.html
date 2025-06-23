@@ -1,22 +1,17 @@
 <!-- MODAL PARA AÑADIR PREGUNTA -->
-    <div class="modal fade" id="modalAgregarPregunta" tabindex="-1" aria-labelledby="modalAgregarPreguntaLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <form id="formAgregarPregunta">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalAgregarPreguntaLabel">Agregar Nueva Pregunta</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="nombrePregunta" class="form-label">Nombre de la Pregunta</label>
-                <input type="text" class="form-control" id="nombrePregunta" required />
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-success">Guardar</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+<div class="modal-header">
+  <h5 class="modal-title" id="modalAgregarPreguntaLabel">Agregar Nueva Pregunta</h5>
+  <button type="button" class="btn-close" aria-label="Cerrar" (click)="activeModal.dismiss('Cancelar')"></button>
+</div>
+<div class="modal-body">
+  <div class="mb-3">
+    <label for="nombrePregunta" class="form-label">Nombre de la pregunta</label>
+    <input type="text" class="form-control" id="nombrePregunta"
+          [(ngModel)]="nombrePregunta" name="nombrePregunta"
+          placeholder="Ejem. ¿Como se llama?" required>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss('Cancelar')">Cancelar</button>
+  <button type="button" class="btn btn-primary" (click)="guardarPregunta()" [disabled]="!nombrePregunta.trim()">Guardar</button>
+</div>

@@ -2,7 +2,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Sidebar general */
 .sidebar {
   height: 100vh;
   position: fixed;
@@ -15,18 +14,15 @@ body {
   z-index: 1030;
 }
 
-/* Para pantallas grandes: aplica margen para dar espacio al sidebar */
 @media (min-width: 768px) {
   .content {
     margin-left: 240px;
     padding: 30px;
   }
 }
-
-/* Para móviles: elimina margen lateral */
 @media (max-width: 767.98px) {
   .content {
-    margin: 1rem; /* o 20px, o como prefieras */
+    margin: 1rem;
   }
 }
 
@@ -52,7 +48,7 @@ body {
 }
 
 .sidebar .submenu-desactivado {
-    color: rgba(255, 255, 255, 0.5); /* blanco con opacidad del 50% */
+    color: rgba(255, 255, 255, 0.5);
     font-style: italic;
     cursor: not-allowed;
 }

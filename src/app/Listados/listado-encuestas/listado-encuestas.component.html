@@ -2,7 +2,7 @@
   <div class="content">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h2>Listado de Encuestas</h2>
-      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregarEncuesta"><i class="bi bi-plus-circle-fill"></i> Añadir Encuesta</button>
+      <button class="btn btn-primary" (click)="ModalAgregarEncuesta()"><i class="bi bi-plus-circle-fill"></i> Añadir Encuesta</button>
     </div>
 
     <div class="table-responsive">
@@ -20,9 +20,9 @@
               <th scope="row">{{encuesta.idEncuesta}}</th>
               <td>{{encuesta.nombre_encuesta}}</td>
               <td>
-                <button class="btn btn-sm btn-warning me-2">Editar</button>
-                <button class="btn btn-sm btn-danger me-2">Eliminar</button>
-                <button class="btn btn-sm btn-success me-2" onclick="console.log()">Añadir Preguntas</button>
+                <button class="btn btn-sm btn-warning me-2" (click)="ModalEditarEncuesta(encuesta.idEncuesta)">Editar</button>
+                <button class="btn btn-sm btn-danger me-2" (click)="ModalEliminarEncuesta(encuesta.idEncuesta)">Eliminar</button>
+                <button class="btn btn-sm btn-success me-2" (click)="agregarPreguntas(encuesta.idEncuesta)">Añadir Preguntas</button>
               </td>
             </tr>
           }
